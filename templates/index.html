@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Intesa Collegiante</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="card glass-effect animate-fadeIn mx-auto">
+      <h1 class="text-glow font-bold mb-6" style="color: var(--primary); font-size: clamp(2rem, 5vw, 3.5rem);">
+        Intesa Collegiante
+      </h1>
+
+      <div id="timer" class="font-mono mb-6 timer-pulse"></div>
+      <div id="parola" class="min-h-[60px] mx-auto max-w-md rounded-xl mb-6" style="background: rgba(255,255,255,0.2);">
+        Premi Start
+      </div>
+
+      <!-- Buttons: 3 in upper row, 2 in lower row -->
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+        <button id="startBtn" class="btn btn-green hover-scale">Avvia</button>
+        <button id="puntoBtn" class="btn btn-purple hover-scale">+1 Punto</button>
+        <button id="passoBtn" class="btn btn-yellow hover-scale">Passo</button>
+      </div>
+      <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;">
+        <button id="menoBtn" class="btn btn-red hover-scale">-1 Punto</button>
+        <button id="resetBtn" class="btn btn-blue hover-scale">Reset</button>
+      </div>
+
+      <!-- Score container -->
+      <div class="score-container">
+        <div class="score-box">
+          <p>Punti:</p>
+          <p id="punti">0</p>
+        </div>
+        <div class="score-box">
+          <p>Passi rimasti:</p>
+          <p id="passi">3</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
